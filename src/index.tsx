@@ -3,8 +3,8 @@ import { type TanStackDevtoolsPluginProps } from '@tanstack/devtools';
 import { createReactPlugin } from '@tanstack/devtools-utils/react';
 import { useEffect } from 'react';
 
-import { Component } from './component';
 import { eventClient } from './event-client';
+import { SharedData } from './shared-data';
 
 import './index.css';
 import type { DevtoolsPanelProps } from './types';
@@ -24,7 +24,7 @@ function DevtoolsPanel({ theme }: DevtoolsPanelProps) {
 
   return (
     <div className="h-(--tsd-main-panel-height)">
-      <Component initialPage={initialPage} theme={theme} />
+      <SharedData initialPage={initialPage} theme={theme} />
     </div>
   );
 }
@@ -40,5 +40,5 @@ const [Plugin] = createReactPlugin({
 export {
   DevtoolsPanel as InertiaDevtoolsPanel,
   Plugin as inertiaDevtoolsPlugin,
-  type DevtoolsPanelProps
+  type DevtoolsPanelProps as InertiaDevtoolsPanelProps
 };

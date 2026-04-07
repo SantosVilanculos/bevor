@@ -52,7 +52,7 @@ function EditorExtensions() {
   return <IndentGuides />;
 }
 
-function Component({
+function SharedData({
   theme,
   initialPage
 }: {
@@ -89,4 +89,4 @@ function Component({
   );
 }
 
-export { Component };
+export { SharedData };
