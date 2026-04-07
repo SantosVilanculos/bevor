@@ -1,11 +1,11 @@
 {
   "$schema": "https://www.schemastore.org/package.json",
-  "name": "@santosvilanculos/lorem",
-  "version": "0.1.3",
-  "description": "Lorem",
-  "homepage": "https://github.com/santosvilanculos/lorem",
+  "name": "@santosvilanculos/bevor",
+  "version": "0.1.0",
+  "description": "Inertia 3 devtools built on top of TanStack DevTools",
+  "homepage": "https://github.com/santosvilanculos/bevor",
   "bugs": {
-    "url": "https://github.com/santosvilanculos/lorem/issues"
+    "url": "https://github.com/santosvilanculos/bevor/issues"
   },
   "license": "MIT",
   "contributors": [
@@ -13,7 +13,7 @@
   ],
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/santosvilanculos/lorem.git"
+    "url": "git+https://github.com/santosvilanculos/bevor.git"
   },
   "files": [
     "dist"
@@ -37,7 +37,6 @@
   "dependencies": {
     "@tanstack/devtools-event-client": "^0.4.3",
     "@tanstack/devtools-utils": "^0.4.0",
-    "lorem": "link:",
     "prism-react-editor": "^3.1.0"
   },
   "devDependencies": {

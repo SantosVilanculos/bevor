@@ -1,7 +1,7 @@
-# @santosvilanculos/lorem
+# @santosvilanculos/bevor
 
-[![npm version](https://img.shields.io/npm/v/@santosvilanculos/lorem.svg)](https://www.npmjs.com/package/@santosvilanculos/lorem)
-[![npm license](https://img.shields.io/npm/l/@santosvilanculos/lorem.svg)](https://www.npmjs.com/package/@santosvilanculos/lorem)
+[![npm version](https://img.shields.io/npm/v/@santosvilanculos/bevor.svg)](https://www.npmjs.com/package/@santosvilanculos/bevor)
+[![npm license](https://img.shields.io/npm/l/@santosvilanculos/bevor.svg)](https://www.npmjs.com/package/@santosvilanculos/bevor)
 
 Inertia 3 devtools built on top of TanStack DevTools. Uses TanStack DevTools as a harness to display Inertia-specific debugging information.
 
@@ -16,7 +16,7 @@ Inertia 3 devtools built on top of TanStack DevTools. Uses TanStack DevTools as 
 ## Installation
 
 ```sh
-pnpm add @santosvilanculos/lorem
+pnpm add @santosvilanculos/bevor
 ```
 
 ## Peer Dependencies
@@ -33,7 +33,7 @@ This package requires the following peer dependencies:
 
 ```tsx
 import { TanStackDevtools } from '@tanstack/react-devtools';
-import { inertiaDevtoolsPlugin } from '@santosvilanculos/lorem';
+import { inertiaDevtoolsPlugin } from '@santosvilanculos/bevor';
 
 function App() {
   return (
@@ -54,7 +54,7 @@ The `inertiaDevtoolsPlugin` registers an Inertia panel within TanStack DevTools.
 
 ```tsx
 import { TanStackDevtools } from '@tanstack/react-devtools';
-import { inertiaDevtoolsPlugin } from '@santosvilanculos/lorem';
+import { inertiaDevtoolsPlugin } from '@santosvilanculos/bevor';
 
 function App() {
   return (
@@ -73,7 +73,7 @@ For custom configurations, you can import and render the `InertiaDevtoolsPanel` 
 
 ```tsx
 import { TanStackDevtools } from '@tanstack/react-devtools';
-import { InertiaDevtoolsPanel } from '@santosvilanculos/lorem';
+import { InertiaDevtoolsPanel } from '@santosvilanculos/bevor';
 
 function App() {
   return (
@@ -96,7 +96,7 @@ function App() {
 Creates a plugin for TanStack DevTools that displays Inertia debugging information.
 
 ```tsx
-import { inertiaDevtoolsPlugin } from '@santosvilanculos/lorem';
+import { inertiaDevtoolsPlugin } from '@santosvilanculos/bevor';
 
 <TanStackDevtools plugins={[inertiaDevtoolsPlugin()]} />
 ```
@@ -106,7 +106,7 @@ import { inertiaDevtoolsPlugin } from '@santosvilanculos/lorem';
 A React component that renders the Inertia devtools panel. Accepts a `theme` prop from TanStack DevTools.
 
 ```tsx
-import { InertiaDevtoolsPanel } from '@santosvilanculos/lorem';
+import { InertiaDevtoolsPanel } from '@santosvilanculos/bevor';
 
 <InertiaDevtoolsPanel theme="light" />
 ```
@@ -116,5 +116,5 @@ import { InertiaDevtoolsPanel } from '@santosvilanculos/lorem';
 Type for the props accepted by `InertiaDevtoolsPanel`.
 
 ```tsx
-import type { InertiaDevtoolsPanelProps } from '@santosvilanculos/lorem';
+import type { InertiaDevtoolsPanelProps } from '@santosvilanculos/bevor';
 ```
