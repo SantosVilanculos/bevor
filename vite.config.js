@@ -31,7 +31,7 @@ export default defineConfig({
     lib: {
       entry: resolve(import.meta.dirname, '/src/index.tsx'),
       name: 'Lorem',
-      formats: ['es', 'cjs'],
+      formats: ['es'],
       fileName: 'index'
     }
   },

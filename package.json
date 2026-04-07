@@ -1,7 +1,7 @@
 {
   "$schema": "https://www.schemastore.org/package.json",
   "name": "@santosvilanculos/lorem",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Lorem",
   "homepage": "https://github.com/santosvilanculos/lorem",
   "bugs": {
@@ -13,24 +13,24 @@
   ],
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/santosvilanculos/lorem.git",
-    "directory": "packages/react"
+    "url": "git+https://github.com/santosvilanculos/lorem.git"
   },
   "files": [
     "dist"
   ],
   "type": "module",
-  "main": "./dist/index.cjs",
+  "main": "./dist/index.js",
   "module": "./dist/index.js",
   "types": "./dist/index.d.ts",
   "exports": {
     ".": {
       "types": "./dist/index.d.ts",
       "import": "./dist/index.js",
-      "require": "./dist/index.cjs"
+      "default": "./dist/index.js"
     }
   },
   "scripts": {
+    "prepublishOnly": "vite build",
     "build": "vite build",
     "dev": "vite"
   },
