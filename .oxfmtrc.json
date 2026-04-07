@@ -1,0 +1,12 @@
+{
+  "$schema": "./node_modules/oxfmt/configuration_schema.json",
+  "arrowParens": "avoid",
+  "ignorePatterns": ["/pnpm-lock.yaml"],
+  "singleQuote": true,
+  "sortImports": {},
+  "sortTailwindcss": {
+    "functions": ["clsx", "cn", "cva", "twMerge"],
+    "stylesheet": "./src/index.css"
+  },
+  "trailingComma": "none"
+}
