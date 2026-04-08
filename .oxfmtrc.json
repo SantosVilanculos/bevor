@@ -5,8 +5,17 @@
   "singleQuote": true,
   "sortImports": {},
   "sortTailwindcss": {
-    "functions": ["clsx", "cn", "cva", "twMerge"],
-    "stylesheet": "./src/index.css"
+    "functions": ["clsx", "cn", "cva", "twMerge"]
   },
+  "overrides": [
+    {
+      "files": ["./packages/react/**"],
+      "options": {
+        "sortTailwindcss": {
+          "stylesheet": "./packages/react/src/index.css"
+        }
+      }
+    }
+  ],
   "trailingComma": "none"
 }

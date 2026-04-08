@@ -1,0 +1,65 @@
+{
+  "$schema": "https://www.schemastore.org/package.json",
+  "name": "@santosvilanculos/bevor-react",
+  "version": "0.1.0",
+  "description": "Inertia 3 devtools built on top of TanStack DevTools",
+  "homepage": "https://github.com/santosvilanculos/bevor-react",
+  "bugs": {
+    "url": "https://github.com/santosvilanculos/bevor-react/issues"
+  },
+  "license": "MIT",
+  "contributors": [
+    "Santos Vilanculos <santosvilanculos@yahoo.com>"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/santosvilanculos/bevor-react.git"
+  },
+  "files": [
+    "dist"
+  ],
+  "type": "module",
+  "main": "./dist/index.js",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js",
+      "default": "./dist/index.js"
+    }
+  },
+  "scripts": {
+    "prepublishOnly": "vite build",
+    "build": "vite build",
+    "dev": "vite"
+  },
+  "dependencies": {
+    "@tanstack/devtools-event-client": "^0.4.3",
+    "@tanstack/devtools-utils": "^0.4.0",
+    "prism-react-editor": "^3.1.0"
+  },
+  "devDependencies": {
+    "@inertiajs/core": "^3.0.3",
+    "@inertiajs/react": "^3.0.3",
+    "@tailwindcss/vite": "^4.2.2",
+    "@tanstack/devtools": "^0.11.1",
+    "@types/react": "^19.2.14",
+    "@types/react-dom": "^19.2.3",
+    "@vitejs/plugin-react": "^6.0.1",
+    "react": "^19.2.4",
+    "react-dom": "^19.2.4",
+    "tailwindcss": "^4.2.2",
+    "typescript": "^6.0.2",
+    "vite": "^8.0.5",
+    "vite-plugin-css-injected-by-js": "^4.0.1",
+    "vite-plugin-dts": "^4.5.4"
+  },
+  "peerDependencies": {
+    "@inertiajs/core": "^3.0.0",
+    "@inertiajs/react": "^3.0.0",
+    "@tanstack/devtools": "^0.11.1",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0"
+  }
+}

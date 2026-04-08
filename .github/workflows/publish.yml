@@ -7,6 +7,9 @@ on:
 jobs:
   publish:
     runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        framework: ['react']
     steps:
       - uses: actions/checkout@v6
 
@@ -25,10 +28,10 @@ jobs:
       - name: Install dependencies
         run: pnpm install --frozen-lockfile
 
-      - name: Build
-        run: pnpm run build
+      - name: 'Build ${{ matrix.framework }}'
+        run: pnpm --filter ./packages/${{ matrix.framework }} run build
 
-      - name: Publish to npm
-        run: pnpm publish --no-git-checks --access public
+      - name: 'Publish ${{ matrix.framework }} to npm'
+        run: pnpm --filter ./packages/${{ matrix.framework }} publish --no-git-checks --access public
         env:
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
