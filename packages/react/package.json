@@ -1,7 +1,7 @@
 {
   "$schema": "https://www.schemastore.org/package.json",
   "name": "@santosvilanculos/bevor-react",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "Inertia 3 devtools built on top of TanStack DevTools",
   "keywords": [
     "inertia",
@@ -9,9 +9,9 @@
     "react",
     "tanstack"
   ],
-  "homepage": "https://github.com/santosvilanculos/bevor-react",
+  "homepage": "https://github.com/santosvilanculos/bevor",
   "bugs": {
-    "url": "https://github.com/santosvilanculos/bevor-react/issues"
+    "url": "https://github.com/santosvilanculos/bevor/issues"
   },
   "license": "MIT",
   "contributors": [
@@ -19,7 +19,8 @@
   ],
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/santosvilanculos/bevor-react.git"
+    "url": "git+https://github.com/santosvilanculos/bevor.git",
+    "directory": "packages/react"
   },
   "files": [
     "dist"
