@@ -1,8 +1,14 @@
 {
   "$schema": "https://www.schemastore.org/package.json",
   "name": "@santosvilanculos/bevor-react",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Inertia 3 devtools built on top of TanStack DevTools",
+  "keywords": [
+    "inertia",
+    "laravel",
+    "react",
+    "tanstack"
+  ],
   "homepage": "https://github.com/santosvilanculos/bevor-react",
   "bugs": {
     "url": "https://github.com/santosvilanculos/bevor-react/issues"
