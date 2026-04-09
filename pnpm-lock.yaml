@@ -54,6 +54,9 @@ importers:
       tailwindcss:
         specifier: ^4.2.2
         version: 4.2.2
+      tailwindcss-scoped-preflight:
+        specifier: ^4.0.1
+        version: 4.0.1(postcss@8.5.9)(tailwindcss@4.2.2)
       typescript:
         specifier: ^6.0.2
         version: 6.0.2
@@ -1040,6 +1043,12 @@ packages:
     resolution: {integrity: sha512-ot0WnXS9fgdkgIcePe6RHNk1WA8+muPa6cSjeR3V8K27q9BB1rTE3R1p7Hv0z1ZyAc8s6Vvv8DIyWf681MAt0w==}
     engines: {node: '>= 0.4'}
 
+  tailwindcss-scoped-preflight@4.0.1:
+    resolution: {integrity: sha512-/BZGvMbUToMXHjoK4Pza6vo0jv6lYRkVYIvgCueo2VJt0xtvY3Zm3kItsCllFH5LVJirYTHC+cAHn9kz7cnIEA==}
+    peerDependencies:
+      postcss: ^8
+      tailwindcss: ^4
+
   tailwindcss@4.2.2:
     resolution: {integrity: sha512-KWBIxs1Xb6NoLdMVqhbhgwZf2PGBpPEiwOqgI4pFIYbNTfBXiKYyWoTsXgBQ9WFg/OlhnvHaY+AEpW7wSmFo2Q==}
 
@@ -1964,6 +1973,11 @@ snapshots:
       has-flag: 4.0.0
 
   supports-preserve-symlinks-flag@1.0.0: {}
+
+  tailwindcss-scoped-preflight@4.0.1(postcss@8.5.9)(tailwindcss@4.2.2):
+    dependencies:
+      postcss: 8.5.9
+      tailwindcss: 4.2.2
 
   tailwindcss@4.2.2: {}
 

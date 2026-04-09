@@ -75,15 +75,17 @@ function SharedData({
     themeCss && (
       <>
         <style>{themeCss}</style>
-        <Editor
-          className="font-mono"
-          language="json"
-          readOnly
-          tabSize={4}
-          value={page ? JSON.stringify(page, undefined, 4) : ''}
-        >
-          <EditorExtensions />
-        </Editor>
+        <div className="bevor">
+          <Editor
+            className="bevor:font-mono"
+            language="json"
+            readOnly
+            tabSize={4}
+            value={page ? JSON.stringify(page, undefined, 4) : ''}
+          >
+            <EditorExtensions />
+          </Editor>
+        </div>
       </>
     )
   );

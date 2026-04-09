@@ -23,7 +23,7 @@ function DevtoolsPanel({ theme }: DevtoolsPanelProps) {
   }, []);
 
   return (
-    <div className="h-(--tsd-main-panel-height)">
+    <div className="bevor h-(--tsd-main-panel-height)">
       <SharedData initialPage={initialPage} theme={theme} />
     </div>
   );

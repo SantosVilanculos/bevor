@@ -1,1 +1,5 @@
-@import 'tailwindcss';
+@import "tailwindcss" prefix(bevor);
+@plugin "tailwindcss-scoped-preflight" {
+  isolationStrategy: inside;
+  selector: ".bevor";
+}
