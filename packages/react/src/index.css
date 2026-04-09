@@ -3,9 +3,3 @@
   isolationStrategy: inside;
   selector: ".bevor";
 }
-
-@layer theme {
-  :root {
-    --bevor-*: initial;
-  }
-}
