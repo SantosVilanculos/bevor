@@ -5,10 +5,7 @@
 }
 
 @layer theme {
-  :root, .bevor {
-    --bevor-font-sans: ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
-    --bevor-font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
-    --bevor-default-font-family: var(--bevor-font-sans);
-    --bevor-default-mono-font-family: var(--bevor-font-mono);
+  :root {
+    --bevor-*: initial;
   }
 }
