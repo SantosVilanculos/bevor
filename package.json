@@ -1,8 +1,8 @@
 {
+  "name": "component",
   "private": true,
   "scripts": {
-    "build": "pnpm --filter ./packages/react build",
-    "format": "oxfmt"
+    "build": "pnpm --filter ./packages/{core,react} build"
   },
   "devDependencies": {
     "oxfmt": "^0.44.0"

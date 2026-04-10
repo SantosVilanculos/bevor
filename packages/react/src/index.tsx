@@ -1,44 +1,14 @@
-import { router, type Page } from '@inertiajs/core';
-import { type TanStackDevtoolsPluginProps } from '@tanstack/devtools';
-import { createReactPlugin } from '@tanstack/devtools-utils/react';
-import { useEffect } from 'react';
+// import _ from './index.css?inline';
+import { Component as _Component } from '@component/core';
+import { createReactPanel, createReactPlugin } from '@tanstack/devtools-utils/react';
 
-import { eventClient } from './event-client';
-import { SharedData } from './shared-data';
+const [A, B] = createReactPanel(_Component);
 
-import './index.css';
-import type { DevtoolsPanelProps } from './types';
+export const Component = process.env.NODE_ENV !== 'development' ? B : A;
 
-function DevtoolsPanel({ theme }: DevtoolsPanelProps) {
-  const element = document.querySelector('[data-page="app"][type="application/json"]');
-
-  const initialPage: Page | null = element ? JSON.parse(element.innerHTML) : null;
-
-  useEffect(() => {
-    const navigate = router.on('navigate', e => eventClient.emit('navigate', e));
-
-    return () => {
-      navigate();
-    };
-  }, []);
-
-  return (
-    <div className="bevor h-(--tsd-main-panel-height)">
-      <SharedData initialPage={initialPage} theme={theme} />
-    </div>
-  );
-}
-
-const [Plugin] = createReactPlugin({
-  name: 'Inertia',
-  id: 'inertia-devtools',
-  defaultOpen: false,
-  Component: ({ theme }: TanStackDevtoolsPluginProps) => <DevtoolsPanel theme={theme} />
+const [C, D] = createReactPlugin({
+  name: 'Component',
+  Component: A
 });
 
-// NOTE: inertia* only on export
-export {
-  DevtoolsPanel as InertiaDevtoolsPanel,
-  Plugin as inertiaDevtoolsPlugin,
-  type DevtoolsPanelProps as InertiaDevtoolsPanelProps
-};
+export const component = process.env.NODE_ENV !== 'development' ? D : C;

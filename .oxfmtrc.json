@@ -3,19 +3,7 @@
   "arrowParens": "avoid",
   "ignorePatterns": ["/pnpm-lock.yaml"],
   "singleQuote": true,
-  "sortImports": {},
-  "sortTailwindcss": {
-    "functions": ["clsx", "cn", "cva", "twMerge"]
-  },
-  "overrides": [
-    {
-      "files": ["./packages/react/**"],
-      "options": {
-        "sortTailwindcss": {
-          "stylesheet": "./packages/react/src/index.css"
-        }
-      }
-    }
-  ],
+  "sortImports": true,
+  "sortPackageJson": true,
   "trailingComma": "none"
 }

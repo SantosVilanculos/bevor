@@ -1,5 +1,5 @@
 {
-  "name": "@component/react",
+  "name": "@component/core",
   "version": "0.0.0",
   "private": true,
   "files": [
@@ -16,23 +16,26 @@
     "build": "tsc && vite build"
   },
   "dependencies": {
-    "@component/core": "workspace:*",
     "@tanstack/devtools": "^0.11.2",
     "@tanstack/devtools-ui": "^0.5.1",
     "@tanstack/devtools-utils": "^0.4.0",
-    "goober": "^2.1.18"
+    "goober": "^2.1.18",
+    "prism-code-editor": "^5.1.0",
+    "solid-js": "^1.9.12"
   },
   "devDependencies": {
+    "@inertiajs/core": "^3.0.3",
     "@types/node": "^25.5.2",
     "@types/react": "^19.2.14",
     "@types/react-dom": "^19.2.3",
-    "@vitejs/plugin-react": "^6.0.1",
     "react": "^19.2.5",
     "react-dom": "^19.2.5",
     "typescript": "^6.0.2",
-    "vite": "^8.0.3"
+    "vite": "^8.0.3",
+    "vite-plugin-solid": "^2.11.12"
   },
   "peerDependencies": {
+    "@inertiajs/core": "^3.0.3",
     "react": "^19.2.5",
     "react-dom": "^19.2.5"
   }
