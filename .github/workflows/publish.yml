@@ -31,11 +31,6 @@ jobs:
       - name: Build react package
         run: pnpm --filter ./packages/react run build
 
-      - name: Publish core package to npm
-        run: pnpm --filter ./packages/core publish --no-git-checks --access public
-        env:
-          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
-
       - name: Publish react package to npm
         run: pnpm --filter ./packages/react publish --no-git-checks --access public
         env:

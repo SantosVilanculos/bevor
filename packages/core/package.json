@@ -1,6 +1,6 @@
 {
   "name": "@santosvilanculos/bevor-core",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "files": [
     "dist",
     "index.d.ts"
