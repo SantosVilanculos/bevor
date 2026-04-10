@@ -1,5 +1,6 @@
 import { router, type Page } from '@inertiajs/core';
 import { createSignal, onCleanup, onMount } from 'solid-js';
+
 import { Editor } from './editor';
 
 function SharedData() {

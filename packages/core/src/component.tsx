@@ -11,11 +11,11 @@ export default function ({}: TanStackDevtoolsPluginProps) {
         <Header>
           <HeaderLogo
             flavor={{
-              light: 'oklch(51.4% 0.222 16.935)',
-              dark: 'oklch(58.6% 0.253 17.585)'
+              light: 'oklch(0.5449 0.2154 262.74)',
+              dark: 'oklch(0.5449 0.2154 262.74)'
             }}
           >
-            Component
+            Inertia 3
           </HeaderLogo>
         </Header>
         <SharedData />

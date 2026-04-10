@@ -1,7 +1,6 @@
 {
-  "name": "@component/core",
-  "version": "0.0.0",
-  "private": true,
+  "name": "@santosvilanculos/bevor-core",
+  "version": "0.2.0",
   "files": [
     "dist",
     "index.d.ts"

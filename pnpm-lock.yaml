@@ -63,7 +63,7 @@ importers:
 
   packages/react:
     dependencies:
-      '@component/core':
+      '@santosvilanculos/bevor-core':
         specifier: workspace:*
         version: link:../core
       '@tanstack/devtools':

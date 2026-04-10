@@ -1,8 +1,9 @@
 {
-  "name": "component",
+  "name": "bevor",
   "private": true,
   "scripts": {
-    "build": "pnpm --filter ./packages/{core,react} build"
+    "build": "pnpm --filter ./packages/{core,react} build",
+    "fmt": "oxfmt"
   },
   "devDependencies": {
     "oxfmt": "^0.44.0"

@@ -11,7 +11,7 @@ export default defineConfig({
     rolldownOptions: {
       external: [/^@inertiajs($|\/)/]
     },
- sourcemap: true,
+    sourcemap: true
   },
   plugins: [solid()]
 });

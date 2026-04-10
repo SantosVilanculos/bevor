@@ -12,7 +12,7 @@ export default defineConfig({
       external: [/^react($|\/)/, /^react-dom($|\/)/]
     },
 
- sourcemap: true,
+    sourcemap: true
   },
   plugins: [react()]
 });
