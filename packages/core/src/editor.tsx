@@ -1,5 +1,7 @@
+import { useTheme } from '@tanstack/devtools-ui';
 import { css } from 'goober';
 import { createEffect, on, onCleanup } from 'solid-js';
+
 import editorStyles from './index.css?inline';
 
 function Editor({ value }: { value: () => string }) {
@@ -7,6 +9,8 @@ function Editor({ value }: { value: () => string }) {
   let editorInstance: any;
   let currentValue: string;
   let initialized = false;
+
+  const { theme } = useTheme();
 
   createEffect(() => {
     if (!containerRef || initialized) return;
@@ -18,22 +22,19 @@ function Editor({ value }: { value: () => string }) {
         import('prism-code-editor/copy-button'),
         import('prism-code-editor/search')
       ]);
-          
+
       const editor = minimalEditor(
         containerRef as HTMLElement,
         {
           language: 'json',
           tabSize: 4,
           value: value(),
-          theme: 'github-dark',
+          theme: theme() === 'dark' ? 'github-dark' : 'github-light',
           readOnly: true
         },
         () => {
           currentValue = value();
-          editor.addExtensions(
-            copyButton(),
-            searchWidget()
-          );
+          editor.addExtensions(copyButton(), searchWidget());
           const shadow = containerRef!.shadowRoot;
           if (shadow) {
             const style = document.createElement('style');
