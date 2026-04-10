@@ -7,24 +7,24 @@
 
 ## Planned Improvements
 
-### 1. Action Bar with Buttons
+### 1. Action Bar with Buttons ✅
 Add a toolbar with action buttons using TanStack DevTools UI `Button` component:
-- **Copy All Data** - Copy full JSON to clipboard (enhance visibility beyond the extension)
-- **Expand/Collapse All** - Toggle all JSON nodes expanded/collapsed
-- **Reset View** - Reset editor to initial state
+- **Copy All Data** - Copy full JSON to clipboard (enhance visibility beyond the extension) ✅
+- ~~Expand/Collapse All~~ - Not applicable for text-based editor
+- ~~Reset View~~ - Not needed
 
-### 2. Indentation Options
+### 2. Indentation Options ✅
 Add controls to change JSON formatting:
-- Toggle between 2-space and 4-space indentation
-- Persist preference
+- Toggle between 2-space and 4-space indentation ✅
+- ~~Persist preference~~ - Not implemented (would require storage)
 
-### 3. Structured Section Views
-Use TanStack DevTools UI `Section` component to organize data:
-- Group Inertia page data by:
-  - `props` - Page props
-  - `errors` - Validation errors
-  - `locale` - Localization data
-  - `auth` - Authentication info
+### 3. Structured Section Views ✅
+Tab-based organization of page data:
+- All - View all page data
+- Props - Page props
+- Errors - Validation errors
+- Locale - Localization data
+- Auth - Authentication info
 
 ## Technical Notes
 
