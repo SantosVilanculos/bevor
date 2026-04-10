@@ -1,0 +1,42 @@
+name: Publish Package
+on:
+  push:
+    tags:
+      - '*'
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v6
+
+      - name: Install pnpm
+        uses: pnpm/action-setup@v4
+        with:
+          version: 10
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v5
+        with:
+          node-version: 24
+          cache: 'pnpm'
+          registry-url: 'https://registry.npmjs.org'
+
+      - name: Install dependencies
+        run: pnpm install --frozen-lockfile
+
+      - name: Build core package
+        run: pnpm --filter ./packages/core run build
+
+      - name: Build react package
+        run: pnpm --filter ./packages/react run build
+
+      - name: Publish core package to npm
+        run: pnpm --filter ./packages/core publish --no-git-checks --access public
+        env:
+          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+
+      - name: Publish react package to npm
+        run: pnpm --filter ./packages/react publish --no-git-checks --access public
+        env:
+          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
