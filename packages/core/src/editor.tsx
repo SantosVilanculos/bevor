@@ -5,37 +5,47 @@ function Editor({ value }: { value: () => string }) {
   let containerRef: HTMLDivElement | undefined;
   let editorInstance: any;
   let currentValue: string;
+  let initialized = false;
 
   createEffect(() => {
-    if (!containerRef) return;
+    if (!containerRef || initialized) return;
+    initialized = true;
 
-    import('prism-code-editor/setups')
-      .then(({ minimalEditor }) => {
-        const editor = minimalEditor(
-          containerRef as HTMLElement,
-          {
-            language: 'json',
-            tabSize: 4,
-            value: value(),
-            theme: 'github-dark',
-            readOnly: true
-          },
-          () => {
-            currentValue = value();
-            const shadow = containerRef!.shadowRoot;
-            if (shadow) {
-              const editorContainer = shadow.querySelector('.prism-code-editor') as HTMLElement;
-              if (editorContainer) {
-                editorContainer.style.flex = '1';
-              }
+    (async () => {
+      const [{ minimalEditor }, { copyButton }, { searchWidget }] = await Promise.all([
+        import('prism-code-editor/setups'),
+        import('prism-code-editor/copy-button'),
+        import('prism-code-editor/search')
+      ]);
+          
+      const editor = minimalEditor(
+        containerRef as HTMLElement,
+        {
+          language: 'json',
+          tabSize: 4,
+          value: value(),
+          theme: 'github-dark',
+          readOnly: true
+        },
+        () => {
+          currentValue = value();
+          editor.addExtensions(
+            copyButton(),
+            searchWidget()
+          );
+          const shadow = containerRef!.shadowRoot;
+          if (shadow) {
+            const editorContainer = shadow.querySelector('.prism-code-editor') as HTMLElement;
+            if (editorContainer) {
+              editorContainer.style.flex = '1';
             }
           }
-        );
+        }
+      );
 
-        editorInstance = editor;
-        onCleanup(() => editor.remove());
-      })
-      .catch(err => console.error('Error loading editor:', err));
+      editorInstance = editor;
+      onCleanup(() => editor.remove());
+    })();
   });
 
   createEffect(
@@ -58,6 +68,7 @@ function Editor({ value }: { value: () => string }) {
         flex-direction: column;
         flex: 1;
         min-height: 0;
+        --editor__line-height: 1.6;
       `}
     />
   );

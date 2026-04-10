@@ -1,4 +1,4 @@
-# @santosvilanculos/bevor
+# @santosvilanculos/bevor-react
 
 [![npm version](https://img.shields.io/npm/v/@santosvilanculos/bevor-react.svg)](https://www.npmjs.com/package/@santosvilanculos/bevor-react)
 [![npm license](https://img.shields.io/npm/l/@santosvilanculos/bevor-react.svg)](https://www.npmjs.com/package/@santosvilanculos/bevor-react)
@@ -33,10 +33,10 @@ This package requires the following peer dependencies:
 
 ```tsx
 import { TanStackDevtools } from '@tanstack/react-devtools';
-import { inertiaDevtoolsPlugin } from '@santosvilanculos/bevor-react';
+import { inertia3DevtoolsPlugin } from '@santosvilanculos/bevor-react';
 
 function App() {
-  return <TanStackDevtools plugins={[inertiaDevtoolsPlugin()]} />;
+  return <TanStackDevtools plugins={[inertia3DevtoolsPlugin()]} />;
 }
 ```
 
@@ -44,32 +44,32 @@ function App() {
 
 ### Using the Plugin
 
-The `inertiaDevtoolsPlugin` registers an Inertia panel within TanStack DevTools.
+The `inertia3DevtoolsPlugin` registers an Inertia panel within TanStack DevTools.
 
 ```tsx
 import { TanStackDevtools } from '@tanstack/react-devtools';
-import { inertiaDevtoolsPlugin } from '@santosvilanculos/bevor-react';
+import { inertia3DevtoolsPlugin } from '@santosvilanculos/bevor-react';
 
 function App() {
-  return <TanStackDevtools plugins={[inertiaDevtoolsPlugin()]} />;
+  return <TanStackDevtools plugins={[inertia3DevtoolsPlugin()]} />;
 }
 ```
 
 ### Using the Panel Directly
 
-For custom configurations, you can import and render the `InertiaDevtoolsPanel` component directly.
+For custom configurations, you can import and render the `Inertia3DevtoolsPanel` component directly.
 
 ```tsx
 import { TanStackDevtools } from '@tanstack/react-devtools';
-import { InertiaDevtoolsPanel } from '@santosvilanculos/bevor-react';
+import { Inertia3DevtoolsPanel } from '@santosvilanculos/bevor-react';
 
 function App() {
   return (
     <TanStackDevtools
       plugins={[
         {
-          name: 'Inertia',
-          render: (_, { theme }) => <InertiaDevtoolsPanel theme={theme} />
+          name: 'Inertia 3',
+          render: (_, { theme }) => <Inertia3DevtoolsPanel theme={theme} />
         }
       ]}
     />
@@ -79,30 +79,30 @@ function App() {
 
 ## API
 
-### `inertiaDevtoolsPlugin()`
+### `inertia3DevtoolsPlugin()`
 
 Creates a plugin for TanStack DevTools that displays Inertia debugging information.
 
 ```tsx
-import { inertiaDevtoolsPlugin } from '@santosvilanculos/bevor-react';
+import { inertia3DevtoolsPlugin } from '@santosvilanculos/bevor-react';
 
-<TanStackDevtools plugins={[inertiaDevtoolsPlugin()]} />;
+<TanStackDevtools plugins={[inertia3DevtoolsPlugin()]} />;
 ```
 
-### `InertiaDevtoolsPanel`
+### `Inertia3DevtoolsPanel`
 
 A React component that renders the Inertia devtools panel. Accepts a `theme` prop from TanStack DevTools.
 
 ```tsx
-import { InertiaDevtoolsPanel } from '@santosvilanculos/bevor-react';
+import { Inertia3DevtoolsPanel } from '@santosvilanculos/bevor-react';
 
-<InertiaDevtoolsPanel theme="light" />;
+<Inertia3DevtoolsPanel theme="light" />;
 ```
 
-### `InertiaDevtoolsPanelProps`
+### `Inertia3DevtoolsPanelProps`
 
-Type for the props accepted by `InertiaDevtoolsPanel`.
+Type for the props accepted by `Inertia3DevtoolsPanel`.
 
 ```tsx
-import type { InertiaDevtoolsPanelProps } from '@santosvilanculos/bevor-react';
+import type { Inertia3DevtoolsPanelProps } from '@santosvilanculos/bevor-react';
 ```
