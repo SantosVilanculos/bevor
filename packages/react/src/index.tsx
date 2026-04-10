@@ -1,4 +1,3 @@
-// import _ from './index.css?inline';
 import { Component as _Component } from '@santosvilanculos/bevor-core';
 import { createReactPanel, createReactPlugin } from '@tanstack/devtools-utils/react';
 

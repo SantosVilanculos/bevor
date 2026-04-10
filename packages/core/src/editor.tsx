@@ -1,5 +1,6 @@
 import { css } from 'goober';
 import { createEffect, on, onCleanup } from 'solid-js';
+import editorStyles from './index.css?inline';
 
 function Editor({ value }: { value: () => string }) {
   let containerRef: HTMLDivElement | undefined;
@@ -35,6 +36,9 @@ function Editor({ value }: { value: () => string }) {
           );
           const shadow = containerRef!.shadowRoot;
           if (shadow) {
+            const style = document.createElement('style');
+            style.textContent = editorStyles;
+            shadow.appendChild(style);
             const editorContainer = shadow.querySelector('.prism-code-editor') as HTMLElement;
             if (editorContainer) {
               editorContainer.style.flex = '1';
