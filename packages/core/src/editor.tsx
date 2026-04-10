@@ -1,3 +1,4 @@
+import { css } from 'goober';
 import { createEffect, on, onCleanup } from 'solid-js';
 
 function Editor({ value }: { value: () => string }) {
@@ -16,10 +17,18 @@ function Editor({ value }: { value: () => string }) {
             language: 'json',
             tabSize: 4,
             value: value(),
-            theme: 'github-dark'
+            theme: 'github-dark',
+            readOnly: true
           },
           () => {
             currentValue = value();
+            const shadow = containerRef!.shadowRoot;
+            if (shadow) {
+              const editorContainer = shadow.querySelector('.prism-code-editor') as HTMLElement;
+              if (editorContainer) {
+                editorContainer.style.flex = '1';
+              }
+            }
           }
         );
 
@@ -41,7 +50,17 @@ function Editor({ value }: { value: () => string }) {
     )
   );
 
-  return <div ref={containerRef} />;
+  return (
+    <div
+      ref={containerRef}
+      class={css`
+        display: flex;
+        flex-direction: column;
+        flex: 1;
+        min-height: 0;
+      `}
+    />
+  );
 }
 
 export { Editor };

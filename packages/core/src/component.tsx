@@ -1,4 +1,5 @@
 // import _ from './index.css?inline';
+import { css } from 'goober';
 import { type TanStackDevtoolsPluginProps } from '@tanstack/devtools';
 import { Header, HeaderLogo, MainPanel, ThemeContextProvider } from '@tanstack/devtools-ui';
 
@@ -7,7 +8,12 @@ import { SharedData } from './shared-data';
 export default function ({}: TanStackDevtoolsPluginProps) {
   return (
     <ThemeContextProvider theme="dark">
-      <MainPanel>
+      <MainPanel
+        class={css`
+          display: flex;
+          flex-direction: column;
+        `}
+      >
         <Header>
           <HeaderLogo
             flavor={{
