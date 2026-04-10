@@ -4,7 +4,7 @@ declare function Inertia3DevtoolsPanel(
   props: TanStackDevtoolsPluginProps
 ): import('react/jsx-runtime').JSX.Element;
 
-interface Inertia3DevtoolsPanelProps extends TanStackDevtoolsPluginProps{}
+interface Inertia3DevtoolsPanelProps extends TanStackDevtoolsPluginProps {}
 
 declare const inertia3DevtoolsPlugin: () => {
   render: (
