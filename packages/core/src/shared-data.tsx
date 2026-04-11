@@ -1,5 +1,5 @@
 import { router, type Page } from '@inertiajs/core';
-import { Button } from '@tanstack/devtools-ui';
+import { Button, Select } from '@tanstack/devtools-ui';
 import { css } from 'goober';
 import { createSignal, onCleanup, onMount } from 'solid-js';
 
@@ -10,7 +10,7 @@ function SharedData() {
   const initialPage: Page | null = element ? JSON.parse(element.innerHTML) : null;
 
   const [page, setPage] = createSignal(initialPage);
-  const [indent, setIndent] = createSignal(4);
+  const [indent, setIndent] = createSignal<2 | 4>(4);
   const [section, setSection] = createSignal<string>('all');
 
   onMount(() => {
@@ -29,12 +29,15 @@ function SharedData() {
 
   const value = () => JSON.stringify(getSectionData() ?? page(), undefined, indent());
 
-  const toggleIndent = () => setIndent(prev => (prev === 4 ? 2 : 4));
-
   const sections = [
     { id: 'all', label: 'All' },
     { id: 'props', label: 'Props' },
     { id: 'errors', label: 'Errors' }
+  ];
+
+  const indentOptions = [
+    { value: 2, label: '2 spaces' },
+    { value: 4, label: '4 spaces' }
   ];
 
   return (
@@ -59,19 +62,13 @@ function SharedData() {
         {sections.map(s => (
           <Button onClick={() => setSection(s.id)}>{s.label}</Button>
         ))}
-      </div>
-      <div
-        class={css`
-          display: flex;
-          gap: 8px;
-          padding: 8px;
-          border-bottom: 1px solid oklch(0.7 0 0);
-        `}
-      >
-        <Button onClick={() => navigator.clipboard.writeText(value())}>
-          Copy {section() === 'all' ? 'All' : section()}
-        </Button>
-        <Button onClick={toggleIndent}>{indent()} spaces</Button>
+        <Select
+          value={indent()}
+          onChange={setIndent}
+          options={indentOptions}
+          placeholder="Tab width"
+          style={{ "margin-left": "auto" }}
+        />
       </div>
       <Editor value={value} />
     </div>
