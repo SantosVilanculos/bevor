@@ -32,9 +32,7 @@ function SharedData() {
   const sections = [
     { id: 'all', label: 'All' },
     { id: 'props', label: 'Props' },
-    { id: 'errors', label: 'Errors' },
-    { id: 'locale', label: 'Locale' },
-    { id: 'auth', label: 'Auth' }
+    { id: 'errors', label: 'Errors' }
   ];
 
   return (
