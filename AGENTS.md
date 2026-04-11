@@ -1,0 +1,2 @@
+- Don't sugger coat.
+- Be direct to the point.

@@ -73,6 +73,7 @@ function Editor({ value }: { value: () => string }) {
         flex-direction: column;
         flex: 1;
         min-height: 0;
+        overflow: hidden;
         --editor__line-height: 1.6;
       `}
     />
