@@ -3,7 +3,7 @@
 [![npm version](https://img.shields.io/npm/v/@santosvilanculos/bevor-react.svg)](https://www.npmjs.com/package/@santosvilanculos/bevor-react)
 [![npm license](https://img.shields.io/npm/l/@santosvilanculos/bevor-react.svg)](https://www.npmjs.com/package/@santosvilanculos/bevor-react)
 
-Inertia 3 devtools built on top of TanStack DevTools. Uses TanStack DevTools as a harness to display Inertia-specific debugging information.
+Inertia 3 devtools built on top of TanStack DevTools. Uses the core package (@santosvilanculos/bevor-core) to display Inertia-specific debugging information.
 
 ## Table of Contents
 

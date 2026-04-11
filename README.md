@@ -4,6 +4,7 @@ Inertia 3 devtools built on top of TanStack DevTools. Uses TanStack DevTools as 
 
 ## Packages
 
+- [`@santosvilanculos/bevor-core`](./packages/core/README.md) - Core package for Bevor.
 - [`@santosvilanculos/bevor-react`](./packages/react/README.md) - React support for Bevor.
 
 ## Roadmap
