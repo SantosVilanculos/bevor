@@ -5,11 +5,14 @@
 
 Core package for Bevor Inertia DevTools. Used by the React adapter package.
 
+## Roadmap
+
+- [ ] Vue support
+- [ ] Svelte support
+
 ## Peer Dependencies
 
-- `@tanstack/devtools-ui`
 - `@inertiajs/core`
-- `solid-js`
 
 ## Usage
 
