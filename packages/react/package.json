@@ -1,6 +1,6 @@
 {
   "name": "@santosvilanculos/bevor-react",
-  "version": "0.2.2",
+  "version": "0.2.3",
   "files": [
     "dist",
     "index.d.ts"
@@ -15,11 +15,11 @@
     "build": "tsc && vite build"
   },
   "dependencies": {
-    "@santosvilanculos/bevor-core": "workspace:*",
-    "@tanstack/devtools": "^0.11.2",
-    "@tanstack/devtools-utils": "^0.4.0"
+    "@santosvilanculos/bevor-core": "workspace:*"
   },
   "devDependencies": {
+    "@tanstack/devtools": "^0.11.2",
+    "@tanstack/devtools-utils": "^0.4.0",
     "@types/node": "^25.5.2",
     "@types/react": "^19.2.14",
     "@types/react-dom": "^19.2.3",

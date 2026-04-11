@@ -1,5 +1,12 @@
 # Changelog
 
+## v0.2.3 (2026-04-11)
+
+### Improvements
+- Move build-time dependencies to devDependencies to reduce install size
+
+---
+
 ## v0.2.2 (2026-04-11)
 
 ### Bug Fixes
