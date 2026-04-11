@@ -27,7 +27,7 @@ function SharedData() {
     return {};
   };
 
-  const value = () => JSON.stringify(getSectionData() ?? page(), undefined, indent());
+  const value = () => JSON.stringify(getSectionData() ?? page(), undefined, Number(indent()));
 
   const sections = [
     { id: 'all', label: 'All' },
@@ -59,16 +59,12 @@ function SharedData() {
           overflow-x: auto;
         `}
       >
+        <label>Tab width</label>
+        <Select value={indent()} onChange={setIndent} options={indentOptions} />
+        <label>Filters</label>
         {sections.map(s => (
           <Button onClick={() => setSection(s.id)}>{s.label}</Button>
         ))}
-        <Select
-          value={indent()}
-          onChange={setIndent}
-          options={indentOptions}
-          placeholder="Tab width"
-          style={{ "margin-left": "auto" }}
-        />
       </div>
       <Editor value={value} />
     </div>
