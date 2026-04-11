@@ -1,4 +1,5 @@
 import { router, type Page } from '@inertiajs/core';
+import { Button } from '@tanstack/devtools-ui';
 import { css } from 'goober';
 import { createSignal, onCleanup, onMount } from 'solid-js';
 
@@ -56,20 +57,7 @@ function SharedData() {
         `}
       >
         {sections.map(s => (
-          <button
-            onClick={() => setSection(s.id)}
-            class={css`
-              padding: 4px 8px;
-              border: 1px solid oklch(0.7 0 0);
-              border-radius: 4px;
-              background: ${section() === s.id ? 'oklch(0.3 0 0)' : 'transparent'};
-              color: ${section() === s.id ? 'oklch(1 0 0)' : 'inherit'};
-              cursor: pointer;
-              white-space: nowrap;
-            `}
-          >
-            {s.label}
-          </button>
+          <Button onClick={() => setSection(s.id)}>{s.label}</Button>
         ))}
       </div>
       <div
@@ -80,30 +68,10 @@ function SharedData() {
           border-bottom: 1px solid oklch(0.7 0 0);
         `}
       >
-        <button
-          onClick={() => navigator.clipboard.writeText(value())}
-          class={css`
-            padding: 4px 8px;
-            border: 1px solid oklch(0.7 0 0);
-            border-radius: 4px;
-            background: transparent;
-            cursor: pointer;
-          `}
-        >
+        <Button onClick={() => navigator.clipboard.writeText(value())}>
           Copy {section() === 'all' ? 'All' : section()}
-        </button>
-        <button
-          onClick={toggleIndent}
-          class={css`
-            padding: 4px 8px;
-            border: 1px solid oklch(0.7 0 0);
-            border-radius: 4px;
-            background: transparent;
-            cursor: pointer;
-          `}
-        >
-          {indent()} spaces
-        </button>
+        </Button>
+        <Button onClick={toggleIndent}>{indent()} spaces</Button>
       </div>
       <Editor value={value} />
     </div>
