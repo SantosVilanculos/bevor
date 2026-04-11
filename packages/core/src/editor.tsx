@@ -17,10 +17,11 @@ function Editor({ value }: { value: () => string }) {
     initialized = true;
 
     (async () => {
-      const [{ minimalEditor }, { copyButton }, { searchWidget }] = await Promise.all([
+      const [{ minimalEditor }, { copyButton }, { searchWidget }, { indentGuides }] = await Promise.all([
         import('prism-code-editor/setups'),
         import('prism-code-editor/copy-button'),
-        import('prism-code-editor/search')
+        import('prism-code-editor/search'),
+        import('prism-code-editor/guides')
       ]);
 
       const editor = minimalEditor(
@@ -34,7 +35,7 @@ function Editor({ value }: { value: () => string }) {
         },
         () => {
           currentValue = value();
-          editor.addExtensions(copyButton(), searchWidget());
+          editor.addExtensions(copyButton(), searchWidget(), indentGuides());
           const shadow = containerRef!.shadowRoot;
           if (shadow) {
             const style = document.createElement('style');
