@@ -1,5 +1,13 @@
 # Changelog
 
+## v0.2.1 (2026-04-11)
+
+### Bug Fixes
+- Fix filters in shared-data to properly return props and errors
+- Return empty object instead of null when section data is unavailable
+
+---
+
 ## v0.2.0 (2026-04-10)
 
 ### Features

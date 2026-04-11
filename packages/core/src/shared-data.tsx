@@ -21,7 +21,9 @@ function SharedData() {
     const p = page();
     const s = section();
     if (!p || s === 'all') return p;
-    return p.props[s] ?? null;
+    if (s === 'props') return p['props'];
+    if (s === 'errors') return p.props['errors'];
+    return {};
   };
 
   const value = () => JSON.stringify(getSectionData() ?? page(), undefined, indent());
