@@ -21,8 +21,7 @@ function SharedData() {
     const p = page();
     const s = section();
     if (!p || s === 'all') return p;
-    const key = s as keyof typeof p;
-    return p[key] ?? null;
+    return p.props[s] ?? null;
   };
 
   const value = () => JSON.stringify(getSectionData() ?? page(), undefined, indent());
