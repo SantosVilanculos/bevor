@@ -1,8 +1,9 @@
-import { type TanStackDevtoolsPluginProps } from '@tanstack/devtools';
+import type { TanStackDevtoolsPluginProps } from '@tanstack/devtools';
+import type { JSX } from 'react';
 
 declare function Inertia3DevtoolsPanel(
   props: TanStackDevtoolsPluginProps
-): import('react/jsx-runtime').JSX.Element;
+): JSX.Element;
 
 interface Inertia3DevtoolsPanelProps extends TanStackDevtoolsPluginProps {}
 
@@ -10,7 +11,7 @@ declare const inertia3DevtoolsPlugin: () => {
   render: (
     _el: HTMLElement,
     props: TanStackDevtoolsPluginProps
-  ) => import('react/jsx-runtime').JSX.Element;
+  ) => JSX.Element;
   name: string;
   id?: string;
   defaultOpen?: boolean;

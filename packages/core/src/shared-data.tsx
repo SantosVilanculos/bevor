@@ -1,5 +1,5 @@
 import { router, type Page } from '@inertiajs/core';
-import { Button, Select } from '@tanstack/devtools-ui';
+import { Button, Select, useTheme } from '@tanstack/devtools-ui';
 import { css } from 'goober';
 import { createSignal, onCleanup, onMount } from 'solid-js';
 
@@ -40,6 +40,8 @@ function SharedData() {
     { value: 4, label: '4 spaces' }
   ];
 
+  const { theme } = useTheme();
+
   return (
     <div
       class={css`
@@ -55,7 +57,7 @@ function SharedData() {
           display: flex;
           gap: 4px;
           padding: 8px;
-          border-bottom: 1px solid oklch(0.7 0 0);
+          border-bottom: ${theme() === 'dark' ? '#d0d5dd 1px solid' : '#d0d5dd 1px solid;'}
           overflow-x: auto;
         `}
       >

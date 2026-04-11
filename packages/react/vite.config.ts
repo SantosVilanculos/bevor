@@ -10,9 +10,7 @@ export default defineConfig({
     },
     rolldownOptions: {
       external: [/^react($|\/)/, /^react-dom($|\/)/]
-    },
-
-    sourcemap: true
+    }
   },
   plugins: [react()]
 });
