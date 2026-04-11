@@ -42,7 +42,7 @@ function SharedData() {
         flex-direction: column;
         flex: 1;
         min-height: 0;
-        overflow: hidden;
+        height: var(--tsd-main-panel-height);
       `}
     >
       <div
