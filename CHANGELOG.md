@@ -6,6 +6,10 @@
 - Fix filters in shared-data to properly return props and errors
 - Return empty object instead of null when section data is unavailable
 
+### Improvements
+- Remove custom copy button, replace tab width toggle with Select from devtools-ui
+- Add indent guides plugin to editor
+
 ---
 
 ## v0.2.0 (2026-04-10)
