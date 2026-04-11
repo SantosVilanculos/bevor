@@ -1,13 +1,13 @@
-import { Component as _Component } from '@santosvilanculos/bevor-core';
+import { Component } from '@santosvilanculos/bevor-core';
 import { createReactPanel, createReactPlugin } from '@tanstack/devtools-utils/react';
 
-const [A, B] = createReactPanel(_Component);
+const [Panel, NoOpPanel] = createReactPanel(Component);
 
-export const Inertia3DevtoolsPanel = process.env.NODE_ENV !== 'development' ? B : A;
+export const Inertia3DevtoolsPanel = process.env.NODE_ENV !== 'development' ? NoOpPanel : Panel;
 
-const [C, D] = createReactPlugin({
+const [Plugin, NoOpPlugin] = createReactPlugin({
   name: 'Inertia 3',
-  Component: A
+  Component: Panel
 });
 
-export const inertia3DevtoolsPlugin = process.env.NODE_ENV !== 'development' ? D : C;
+export const inertia3DevtoolsPlugin = process.env.NODE_ENV !== 'development' ? NoOpPlugin : Plugin;
